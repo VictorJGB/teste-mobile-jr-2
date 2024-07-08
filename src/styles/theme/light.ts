@@ -29,4 +29,4 @@ export default {
       textColor: '#9B9E9F',
     },
   },
-}
+};
