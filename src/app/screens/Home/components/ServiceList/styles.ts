@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    gap: 12,
+    padding: 16,
   },
   headerContainer: {
     width: '100%',
@@ -15,6 +17,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    paddingVertical: 7,
   },
 
   headerTitle: {

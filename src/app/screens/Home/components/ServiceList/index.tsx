@@ -11,6 +11,7 @@ import HeaderButton from './components/HeaderButton'
 
 // icons
 import { Feather, MaterialIcons } from '@expo/vector-icons'
+import ServiceCard from './components/ServiceCard'
 
 type serviceListProps = {
   title: string
@@ -72,6 +73,19 @@ export default function ServiceList({ title }: serviceListProps) {
             />
           </HeaderButton>
         </View>
+      </View>
+      <View
+        style={{
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          gap: 10,
+        }}
+      >
+        <ServiceCard />
+        <ServiceCard />
+        <ServiceCard />
       </View>
     </View>
   )
