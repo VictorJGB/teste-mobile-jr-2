@@ -31,6 +31,9 @@ const themeColor = Theme.colors
 export function Routes() {
   return (
     <Navigator
+      sceneContainerStyle={{
+        backgroundColor: '#F9F9F9',
+      }}
       initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: themeColor.tabButton.selected.textColor,

@@ -1,6 +1,5 @@
 import Theme from '@/styles/Theme'
 import 'styled-components'
-import { AppThemeProps } from './theme.d'
 
 type AppThemeProps = typeof Theme
 

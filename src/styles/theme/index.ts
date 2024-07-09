@@ -25,9 +25,25 @@ const Theme = {
     },
     input: {
       background: '#FBFBFB',
-      border: '#F2F2F2',
       placeholder: '#9B9E9F',
       textColor: '#9B9E9F',
+    },
+  },
+  fonts: {
+    fontFamily: {
+      regular: 'Inter_400Regular',
+      medium: 'Inter_500Medium',
+      semibold: 'Inter_600SemiBold',
+      bold: 'Inter_700Bold',
+    },
+    sizes: {
+      xs: 10,
+      sm: 12,
+      base: 14,
+      lg: 16,
+      'heading-3': 18,
+      'heading-2': 20,
+      'heading-1': 24,
     },
   },
 }
