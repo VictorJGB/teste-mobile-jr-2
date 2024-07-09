@@ -1,7 +1,12 @@
-import theme from '@/styles/theme';
+import Theme from '@/styles/Theme'
+import 'styled-components'
+import { AppThemeProps } from './theme.d'
 
-type Theme = typeof theme.light;
+type AppThemeProps = typeof Theme
 
-declare module 'theme' {
-  export interface DefaultTheme extends Theme {}
+export type styledThemeProps = {
+  theme: AppThemeProps
+}
+declare module 'styled-components' {
+  interface DefaultTheme extends AppThemeProps {}
 }
