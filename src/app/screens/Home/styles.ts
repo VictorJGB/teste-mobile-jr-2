@@ -5,9 +5,11 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingHorizontal: 16,
+    gap: 10,
   },
   topNavigation: {
     width: '100%',

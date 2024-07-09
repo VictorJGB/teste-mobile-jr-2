@@ -2,21 +2,17 @@ import React from 'react'
 // icons
 import { Feather } from '@expo/vector-icons'
 // components
-import { Button, Text, TextInput, View } from 'react-native'
-// routes
-import { StackNavigation } from '@/routes'
-// react navigation
-import { useNavigation } from '@react-navigation/native'
+import { TextInput, View } from 'react-native'
 
 import PrimaryButton from '@/components/AppButton/PrimaryButton'
 import Theme from '@/styles/Theme'
+import ServiceList from './components/ServiceList'
 import { styles } from './styles'
 
 export default function HomeScreen() {
-  const { navigate } = useNavigation<StackNavigation>()
-
   return (
     <View style={styles.container}>
+      {/* top navigation */}
       <View style={styles.topNavigation}>
         <View style={styles.inputContainer}>
           <TextInput
@@ -36,8 +32,7 @@ export default function HomeScreen() {
           </PrimaryButton>
         </View>
       </View>
-      <Text>Home Page!</Text>
-      <Button title="Go to Servicos" onPress={() => navigate('Services')} />
+      <ServiceList title="AC Manutenção" />
     </View>
   )
 }

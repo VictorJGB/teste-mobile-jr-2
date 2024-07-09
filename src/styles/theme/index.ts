@@ -1,6 +1,8 @@
 const Theme = {
   colors: {
     background: '#FFFFFF',
+    grey: '#CABDFF',
+    black: '#1A1D1F',
     primary: {
       background: '#6759FF',
       textColor: '#FFFFFF',
@@ -45,6 +47,18 @@ const Theme = {
       'heading-3': 18,
       'heading-2': 20,
       'heading-1': 24,
+    },
+  },
+  shadows: {
+    base: {
+      offset: {
+        width: 0,
+        height: 4,
+      },
+      blur: 8,
+      spread: -4,
+      color: '#000',
+      opacity: 0.1,
     },
   },
 }
