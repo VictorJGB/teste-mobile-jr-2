@@ -24,6 +24,7 @@ const Theme = {
       },
     },
     input: {
+      border: '#F2F2F2',
       background: '#FBFBFB',
       placeholder: '#9B9E9F',
       textColor: '#9B9E9F',
