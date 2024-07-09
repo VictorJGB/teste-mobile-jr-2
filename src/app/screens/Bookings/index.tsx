@@ -2,7 +2,7 @@ import { StackNavigation } from '@/routes'
 import { useNavigation } from '@react-navigation/native'
 import { Button, Text, View } from 'react-native'
 
-export default function ServicoScreen() {
+export default function BookingsScreen() {
   const { navigate } = useNavigation<StackNavigation>()
 
   return (

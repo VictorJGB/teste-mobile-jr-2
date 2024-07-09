@@ -1,8 +1,10 @@
 import React from 'react'
 
 // screens
+import BookScreen from '@/app/screens/Book'
+import BookingsScreen from '@/app/screens/Bookings'
 import HomeScreen from '@/app/screens/Home'
-import ServicosScreen from '@/app/screens/Servicos'
+import ServicesScreen from '@/app/screens/Services'
 
 // Themes
 import Theme from '@/styles/Theme'
@@ -15,12 +17,10 @@ import {
 } from '@expo/vector-icons'
 
 // Navigation
-import AgendamentosScreen from '@/app/screens/Agendamentos'
-import AgendarScreen from '@/app/screens/Agendar'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationProp } from '@react-navigation/native'
 
-export type Screens = ['Home', 'Servicos', 'Agendamentos', 'Agendar']
+export type Screens = ['Home', 'Services', 'Bookings', 'Book']
 export type RootStackParamList = Record<Screens[number], undefined>
 export type StackNavigation = NavigationProp<RootStackParamList>
 
@@ -52,8 +52,8 @@ export function Routes() {
         }}
       />
       <Screen
-        name="Servicos"
-        component={ServicosScreen}
+        name="Bookings"
+        component={BookingsScreen}
         options={{
           tabBarIcon: ({ color, size }) => {
             return (
@@ -67,8 +67,8 @@ export function Routes() {
         }}
       />
       <Screen
-        name="Agendamentos"
-        component={AgendamentosScreen}
+        name="Services"
+        component={ServicesScreen}
         options={{
           tabBarIcon: ({ color, size }) => {
             return (
@@ -89,8 +89,8 @@ export function Routes() {
         }}
       />
       <Screen
-        name="Agendar"
-        component={AgendarScreen}
+        name="Book"
+        component={BookScreen}
         options={{
           tabBarIcon: ({ color, size }) => {
             return (
