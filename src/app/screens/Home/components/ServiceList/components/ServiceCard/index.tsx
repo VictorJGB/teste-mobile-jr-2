@@ -1,5 +1,5 @@
 import { Image } from 'expo-image'
-import { Text, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 
 // icons
 import { AntDesign, SimpleLineIcons } from '@expo/vector-icons'
@@ -43,9 +43,9 @@ export default function ServiceCard({ data }: cardProps) {
         </View>
       </View>
       {/* options */}
-      <View style={styles.optionsContainer}>
+      <TouchableOpacity style={styles.optionsContainer}>
         <SimpleLineIcons name="options" size={20} color="#6F767E" />
-      </View>
+      </TouchableOpacity>
     </View>
   )
 }
