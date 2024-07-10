@@ -32,7 +32,7 @@ export function Routes() {
   return (
     <Navigator
       sceneContainerStyle={{
-        backgroundColor: '#F9F9F9',
+        backgroundColor: Theme.colors.backgroundIce,
       }}
       initialRouteName="Home"
       screenOptions={{

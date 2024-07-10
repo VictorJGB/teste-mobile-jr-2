@@ -3,12 +3,10 @@ import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   container: {
+    backgroundColor: Theme.colors.backgroundIce,
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingHorizontal: 16,
     gap: 10,
   },
   topNavigation: {
@@ -19,6 +17,7 @@ export const styles = StyleSheet.create({
     paddingTop: 12,
     paddingBottom: 17,
     backgroundColor: Theme.colors.background,
+    paddingHorizontal: 16,
   },
   inputContainer: {
     width: '100%',
@@ -39,5 +38,16 @@ export const styles = StyleSheet.create({
     color: Theme.colors.input.textColor,
     fontSize: Theme.fonts.sizes.sm,
     fontFamily: Theme.fonts.fontFamily.regular,
+  },
+
+  scrollView: {
+    backgroundColor: Theme.colors.background,
+    borderRadius: 8,
+    flex: 1,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 40,
+    marginHorizontal: 16,
   },
 })

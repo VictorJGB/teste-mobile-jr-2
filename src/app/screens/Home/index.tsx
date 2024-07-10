@@ -2,12 +2,12 @@ import React from 'react'
 // icons
 import { Feather } from '@expo/vector-icons'
 // components
-import { TextInput, View } from 'react-native'
+import { ScrollView, TextInput, View } from 'react-native'
 
 import PrimaryButton from '@/components/AppButton/PrimaryButton'
 import { ServicesData } from '@/data/services'
 import Theme from '@/styles/Theme'
-import ServiceList from './components/ServiceList'
+import ServiceListComponent from './components/ServiceList'
 import { styles } from './styles'
 
 export default function HomeScreen() {
@@ -33,7 +33,11 @@ export default function HomeScreen() {
           </PrimaryButton>
         </View>
       </View>
-      <ServiceList serviceList={ServicesData[0]} />
+      <ScrollView contentContainerStyle={styles.scrollView}>
+        {ServicesData.map((serviceList, index) => {
+          return <ServiceListComponent key={index} data={serviceList} />
+        })}
+      </ScrollView>
     </View>
   )
 }

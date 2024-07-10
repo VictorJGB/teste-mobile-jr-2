@@ -1,6 +1,6 @@
 // react
-import { useState } from 'react'
-import { Text, View } from 'react-native'
+import React, { useState } from 'react'
+import { ScrollView, Text, View } from 'react-native'
 
 // styles
 import Theme from '@/styles/Theme'
@@ -10,18 +10,15 @@ import styles from './styles'
 import HeaderButton from './components/HeaderButton'
 
 // icons
-import Service from '@/app/types/Service'
 import ServiceList from '@/app/types/ServiceList'
 import { Feather, MaterialIcons } from '@expo/vector-icons'
 import ServiceCard from './components/ServiceCard'
 
 type serviceListProps = {
-  serviceList: ServiceList
+  data: ServiceList
 }
 
-export default function ServiceListComponent({
-  serviceList,
-}: serviceListProps) {
+export default function ServiceListComponent({ data }: serviceListProps) {
   const [layoutType, setLayoutType] = useState<'list' | 'grid'>('list')
 
   return (
@@ -30,7 +27,7 @@ export default function ServiceListComponent({
       <View style={styles.headerContainer}>
         <View style={styles.headerTitle}>
           <View style={styles.line} />
-          <Text style={styles.headerText}>{serviceList.category}</Text>
+          <Text style={styles.headerText}>{data.category}</Text>
         </View>
         {/* button group */}
         <View style={styles.buttonGroup}>
@@ -78,19 +75,15 @@ export default function ServiceListComponent({
           </HeaderButton>
         </View>
       </View>
-      <View
-        style={{
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-start',
-          gap: 10,
-        }}
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollView}
       >
-        {serviceList.services.map((service: Service, index) => {
+        {data.services.map((service, index) => {
           return <ServiceCard key={index} data={service} />
         })}
-      </View>
+      </ScrollView>
     </View>
   )
 }
