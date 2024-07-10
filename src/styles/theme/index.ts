@@ -48,6 +48,7 @@ const Theme = {
       'heading-3': 18,
       'heading-2': 20,
       'heading-1': 24,
+      'xl-heading': 28,
     },
   },
   shadows: {
