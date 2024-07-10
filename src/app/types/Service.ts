@@ -1,7 +1,8 @@
 type Service = {
+  image: string
   stars: {
     score: number
-    qunatity: number
+    quantity: number
   }
   title: string
   startsFrom: string

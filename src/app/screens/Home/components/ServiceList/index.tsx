@@ -10,14 +10,18 @@ import styles from './styles'
 import HeaderButton from './components/HeaderButton'
 
 // icons
+import Service from '@/app/types/Service'
+import ServiceList from '@/app/types/ServiceList'
 import { Feather, MaterialIcons } from '@expo/vector-icons'
 import ServiceCard from './components/ServiceCard'
 
 type serviceListProps = {
-  title: string
+  serviceList: ServiceList
 }
 
-export default function ServiceList({ title }: serviceListProps) {
+export default function ServiceListComponent({
+  serviceList,
+}: serviceListProps) {
   const [layoutType, setLayoutType] = useState<'list' | 'grid'>('list')
 
   return (
@@ -26,7 +30,7 @@ export default function ServiceList({ title }: serviceListProps) {
       <View style={styles.headerContainer}>
         <View style={styles.headerTitle}>
           <View style={styles.line} />
-          <Text style={styles.headerText}>{title}</Text>
+          <Text style={styles.headerText}>{serviceList.category}</Text>
         </View>
         {/* button group */}
         <View style={styles.buttonGroup}>
@@ -83,9 +87,9 @@ export default function ServiceList({ title }: serviceListProps) {
           gap: 10,
         }}
       >
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
+        {serviceList.services.map((service: Service, index) => {
+          return <ServiceCard key={index} data={service} />
+        })}
       </View>
     </View>
   )

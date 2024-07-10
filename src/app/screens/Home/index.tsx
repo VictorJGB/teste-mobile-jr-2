@@ -5,6 +5,7 @@ import { Feather } from '@expo/vector-icons'
 import { TextInput, View } from 'react-native'
 
 import PrimaryButton from '@/components/AppButton/PrimaryButton'
+import { ServicesData } from '@/data/services'
 import Theme from '@/styles/Theme'
 import ServiceList from './components/ServiceList'
 import { styles } from './styles'
@@ -32,7 +33,7 @@ export default function HomeScreen() {
           </PrimaryButton>
         </View>
       </View>
-      <ServiceList title="AC Manutenção" />
+      <ServiceList serviceList={ServicesData[0]} />
     </View>
   )
 }
