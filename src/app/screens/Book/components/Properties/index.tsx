@@ -7,7 +7,7 @@ import styles from './styles'
 
 type PropertiesProps = {
   property: Properties
-  onButtonPress: (value?: React.SetStateAction<Properties>) => void
+  onButtonPress: (value: React.SetStateAction<Properties>) => void
 }
 
 export default function PropertiesComponent({
@@ -27,7 +27,7 @@ export default function PropertiesComponent({
         {/* home property */}
         <TouchableOpacity
           style={styles.bookButton}
-          onPress={() => onButtonPress()}
+          onPress={() => onButtonPress(Properties.home)}
         >
           <View
             style={[
@@ -55,7 +55,7 @@ export default function PropertiesComponent({
         {/* office property */}
         <TouchableOpacity
           style={styles.bookButton}
-          onPress={() => onButtonPress()}
+          onPress={() => onButtonPress(Properties.office)}
         >
           <View
             style={[
@@ -83,7 +83,7 @@ export default function PropertiesComponent({
         {/* vila property */}
         <TouchableOpacity
           style={styles.bookButton}
-          onPress={() => onButtonPress()}
+          onPress={() => onButtonPress(Properties.vila)}
         >
           <View
             style={[

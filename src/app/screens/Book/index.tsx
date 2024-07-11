@@ -12,9 +12,10 @@ import styles from './styles'
 
 // icons
 import Theme from '@/styles/Theme'
-import { AntDesign, Entypo, Feather, Ionicons } from '@expo/vector-icons'
+import { AntDesign } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import Properties from './components/enums/Properties'
+import PropertiesComponent from './components/Properties'
 
 export default function BookScreen() {
   const [property, setProperty] = useState<Properties>(Properties.home)
@@ -48,100 +49,10 @@ export default function BookScreen() {
       <View style={styles.bookContainer}>
         <ScrollView contentContainerStyle={styles.bookContent}>
           {/* Property container */}
-          <View style={styles.optionsContainer}>
-            {/* header */}
-            <View style={styles.propertyHeader}>
-              <View style={styles.line} />
-              <Text style={styles.headerTitle}>Type of Property</Text>
-            </View>
-
-            {/* button group */}
-            <View style={styles.buttonGroup}>
-              {/* home property */}
-              <TouchableOpacity
-                style={styles.bookButton}
-                onPress={() => setProperty(Properties.home)}
-              >
-                <View
-                  style={[
-                    styles.bookIconContainer,
-                    property === Properties.home
-                      ? { borderColor: Theme.colors.primary.background }
-                      : {
-                          borderColor: '#D1D3D4',
-                        },
-                  ]}
-                >
-                  <Feather
-                    name="home"
-                    size={24}
-                    color={
-                      property === Properties.home
-                        ? Theme.colors.primary.background
-                        : '#D1D3D4'
-                    }
-                  />
-                </View>
-                <Text style={styles.bookButtonText}>Home</Text>
-              </TouchableOpacity>
-
-              {/* office property */}
-              <TouchableOpacity
-                style={styles.bookButton}
-                onPress={() => setProperty(Properties.office)}
-              >
-                <View
-                  style={[
-                    styles.bookIconContainer,
-                    property === Properties.office
-                      ? { borderColor: Theme.colors.primary.background }
-                      : {
-                          borderColor: '#D1D3D4',
-                        },
-                  ]}
-                >
-                  <Ionicons
-                    name="business"
-                    size={24}
-                    color={
-                      property === Properties.office
-                        ? Theme.colors.primary.background
-                        : '#D1D3D4'
-                    }
-                  />
-                </View>
-                <Text style={styles.bookButtonText}>Office</Text>
-              </TouchableOpacity>
-
-              {/* vila property */}
-              <TouchableOpacity
-                style={styles.bookButton}
-                onPress={() => setProperty(Properties.vila)}
-              >
-                <View
-                  style={[
-                    styles.bookIconContainer,
-                    property === Properties.vila
-                      ? { borderColor: Theme.colors.primary.background }
-                      : {
-                          borderColor: '#D1D3D4',
-                        },
-                  ]}
-                >
-                  <Entypo
-                    name="shop"
-                    size={24}
-                    color={
-                      property === Properties.vila
-                        ? Theme.colors.primary.background
-                        : '#D1D3D4'
-                    }
-                  />
-                </View>
-                <Text style={styles.bookButtonText}>Vila</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
+          <PropertiesComponent
+            property={property}
+            onButtonPress={setProperty}
+          />
           {/* Quantity container */}
           <View style={styles.optionsContainer}>
             {/* Units */}
