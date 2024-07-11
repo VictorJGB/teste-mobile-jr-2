@@ -1,17 +1,53 @@
-import { useNavigation } from '@react-navigation/native'
-import { Button, Text, View } from 'react-native'
-// navigation
-import { StackNavigation } from '@/routes'
+import { ScrollView, Text, View } from "react-native";
+
+// components
+import FilterButton from "./components/FilterButton";
 // styles
-import styles from './styles'
+import { useState } from "react";
+import NoContentComponent from "./components/NoContent";
+import styles from "./styles";
+
+enum Filters {
+  upcoming,
+  history,
+  draft,
+}
 
 export default function BookingsScreen() {
-  const { navigate } = useNavigation<StackNavigation>()
+  const [filterType, setFilterType] = useState<Filters>(Filters.upcoming);
 
   return (
     <View style={styles.container}>
-      <Text>Servicos Screen</Text>
-      <Button title="Go back" onPress={() => navigate('Home')} />
+      <View style={styles.headerContainer}>
+        <View style={styles.line} />
+        <Text style={styles.headerTitle}>Bookings</Text>
+      </View>
+
+      {/* bookings info */}
+      <View style={styles.bookingInfo}>
+        {/* button group */}
+        <View style={styles.buttonGroup}>
+          <FilterButton
+            isSelected={filterType === Filters.upcoming}
+            onPress={() => setFilterType(Filters.upcoming)}
+            title="Upcoming"
+          />
+          <FilterButton
+            isSelected={filterType === Filters.history}
+            onPress={() => setFilterType(Filters.history)}
+            title="History"
+          />
+          <FilterButton
+            isSelected={filterType === Filters.draft}
+            onPress={() => setFilterType(Filters.draft)}
+            title="Draft"
+          />
+        </View>
+        {/* bookings content */}
+        <ScrollView contentContainerStyle={styles.bookingsContent}>
+          <NoContentComponent />
+        </ScrollView>
+      </View>
     </View>
-  )
+  );
 }
