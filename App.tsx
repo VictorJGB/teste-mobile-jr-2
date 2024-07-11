@@ -1,5 +1,6 @@
-import Book from '@/app/screens/Book'
+import BookScreen from '@/app/screens/Book'
 import RootLayout from '@/layout/root-layout'
+
 import Theme from '@/styles/Theme'
 import React from 'react'
 import { ThemeProvider } from 'styled-components/native'
@@ -11,7 +12,7 @@ export default function App() {
         {/* <NavigationContainer>
           <Routes />
         </NavigationContainer> */}
-        <Book />
+        <BookScreen />
       </RootLayout>
     </ThemeProvider>
   )

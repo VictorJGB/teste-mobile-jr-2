@@ -95,6 +95,7 @@ export function Routes() {
         name="Book"
         component={BookScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => {
             return (
               <MaterialCommunityIcons

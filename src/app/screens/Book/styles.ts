@@ -4,8 +4,6 @@ import { StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    display: 'flex',
-    alignItems: 'center',
     backgroundColor: Theme.colors.backgroundIce,
     position: 'relative',
   },
@@ -45,8 +43,8 @@ export const styles = StyleSheet.create({
     maxWidth: '50%',
   },
   bookContainer: {
+    flex: 1,
     width: '100%',
-    zIndex: 2,
     position: 'absolute',
     top: 220,
     alignSelf: 'center',
@@ -63,7 +61,7 @@ export const styles = StyleSheet.create({
 
 export const globalStyles = StyleSheet.create({
   optionsContainer: {
-    width: '100%',
+    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
