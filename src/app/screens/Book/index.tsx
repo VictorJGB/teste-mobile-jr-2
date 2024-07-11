@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   ImageBackground,
   ScrollView,
@@ -15,7 +15,15 @@ import Theme from '@/styles/Theme'
 import { AntDesign, Entypo, Feather, Ionicons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 
+enum Properties {
+  'home',
+  'office',
+  'vila',
+}
+
 export default function BookScreen() {
+  const [property, setProperty] = useState<Properties>(Properties.home)
+
   return (
     <View style={styles.container}>
       {/* image container */}
@@ -45,42 +53,98 @@ export default function BookScreen() {
       <View style={styles.bookContainer}>
         <ScrollView contentContainerStyle={styles.bookContent}>
           {/* Property container */}
-          <View>
+          <View style={styles.propertyContainer}>
             {/* header */}
-            <View>
-              <View />
-              <Text>Type of Property</Text>
+            <View style={styles.propertyHeader}>
+              <View style={styles.line} />
+              <Text style={styles.headerTitle}>Type of Property</Text>
             </View>
           </View>
 
           {/* button group */}
-          <View>
+          <View style={styles.buttonGroup}>
             {/* home property */}
-            <TouchableOpacity>
-              <View>
-                <Feather name="home" size={24} color="#D1D3D4" />
+            <TouchableOpacity
+              style={styles.bookButton}
+              onPress={() => setProperty(Properties.home)}
+            >
+              <View
+                style={[
+                  styles.bookIconContainer,
+                  property === Properties.home
+                    ? { borderColor: Theme.colors.primary.background }
+                    : {
+                        borderColor: '#D1D3D4',
+                      },
+                ]}
+              >
+                <Feather
+                  name="home"
+                  size={24}
+                  color={
+                    property === Properties.home
+                      ? Theme.colors.primary.background
+                      : '#D1D3D4'
+                  }
+                />
               </View>
-              <Text>Home</Text>building
+              <Text style={styles.bookButtonText}>Home</Text>
             </TouchableOpacity>
 
             {/* office property */}
-            <TouchableOpacity>
-              <View>
+            <TouchableOpacity
+              style={styles.bookButton}
+              onPress={() => setProperty(Properties.office)}
+            >
+              <View
+                style={[
+                  styles.bookIconContainer,
+                  property === Properties.office
+                    ? { borderColor: Theme.colors.primary.background }
+                    : {
+                        borderColor: '#D1D3D4',
+                      },
+                ]}
+              >
                 <Ionicons
                   name="business"
                   size={24}
-                  color={Theme.colors.primary.background}
+                  color={
+                    property === Properties.office
+                      ? Theme.colors.primary.background
+                      : '#D1D3D4'
+                  }
                 />
               </View>
-              <Text>Office</Text>
+              <Text style={styles.bookButtonText}>Office</Text>
             </TouchableOpacity>
 
             {/* vila property */}
-            <TouchableOpacity>
-              <View>
-                <Entypo name="shop" size={24} color="black" />
+            <TouchableOpacity
+              style={styles.bookButton}
+              onPress={() => setProperty(Properties.vila)}
+            >
+              <View
+                style={[
+                  styles.bookIconContainer,
+                  property === Properties.vila
+                    ? { borderColor: Theme.colors.primary.background }
+                    : {
+                        borderColor: '#D1D3D4',
+                      },
+                ]}
+              >
+                <Entypo
+                  name="shop"
+                  size={24}
+                  color={
+                    property === Properties.vila
+                      ? Theme.colors.primary.background
+                      : '#D1D3D4'
+                  }
+                />
               </View>
-              <Text>Vila</Text>
+              <Text style={styles.bookButtonText}>Vila</Text>
             </TouchableOpacity>
           </View>
 

@@ -32,6 +32,7 @@ const Theme = {
       placeholder: '#9B9E9F',
       textColor: '#9B9E9F',
     },
+    headerTag: '#CABDFF',
   },
   fonts: {
     fontFamily: {
@@ -43,6 +44,7 @@ const Theme = {
     sizes: {
       xs: 10,
       sm: 12,
+      smAlternative: 13,
       base: 14,
       lg: 16,
       'heading-3': 18,
