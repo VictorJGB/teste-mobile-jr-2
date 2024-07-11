@@ -4,7 +4,6 @@ import {
   ScrollView,
   Text,
   TextInput,
-  TouchableOpacity,
   View,
 } from 'react-native'
 
@@ -15,10 +14,13 @@ import Theme from '@/styles/Theme'
 import { AntDesign } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import PropertiesComponent from './components/Properties'
+import QuantitiesComponent from './components/Quantities'
 import Properties from './enums/Properties'
 
 export default function BookScreen() {
   const [property, setProperty] = useState<Properties>(Properties.home)
+  const [units, setUnits] = useState<number>(0)
+  const [bedrooms, setBedrooms] = useState<number>(0)
 
   return (
     <View style={styles.container}>
@@ -54,39 +56,12 @@ export default function BookScreen() {
             onButtonPress={setProperty}
           />
           {/* Quantity container */}
-          <View style={styles.optionsContainer}>
-            {/* Units */}
-            <View>
-              <Text>Number of units</Text>
-
-              {/* button group */}
-              <View>
-                <TouchableOpacity>
-                  <AntDesign name="minus" size={24} color="black" />
-                </TouchableOpacity>
-                <Text>2</Text>
-                <TouchableOpacity>
-                  <AntDesign name="plus" size={24} color="black" />
-                </TouchableOpacity>
-              </View>
-            </View>
-
-            {/* Bedrooms */}
-            <View>
-              <Text>Number of Bedrooms</Text>
-
-              {/* button group */}
-              <View>
-                <TouchableOpacity>
-                  <AntDesign name="minus" size={24} color="black" />
-                </TouchableOpacity>
-                <Text>0</Text>
-                <TouchableOpacity>
-                  <AntDesign name="plus" size={24} color="black" />
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
+          <QuantitiesComponent
+            units={units}
+            onUnitChange={setUnits}
+            bedrooms={bedrooms}
+            onBedroomChange={setBedrooms}
+          />
 
           {/* Description container */}
           <View>
