@@ -1,18 +1,13 @@
 import React, { useState } from 'react'
-import {
-  ImageBackground,
-  ScrollView,
-  Text,
-  TextInput,
-  View,
-} from 'react-native'
+import { ImageBackground, ScrollView, Text, View } from 'react-native'
 
-import styles from './styles'
+import { styles } from './styles'
 
 // icons
 import Theme from '@/styles/Theme'
 import { AntDesign } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
+import DescriptionComponent from './components/Description'
 import PropertiesComponent from './components/Properties'
 import QuantitiesComponent from './components/Quantities'
 import Properties from './enums/Properties'
@@ -64,20 +59,7 @@ export default function BookScreen() {
           />
 
           {/* Description container */}
-          <View>
-            {/* header */}
-            <View>
-              <View />
-              <Text>Description</Text>
-            </View>
-
-            {/* textarea */}
-            <TextInput
-              multiline
-              numberOfLines={2}
-              placeholder="Write an description..."
-            />
-          </View>
+          <DescriptionComponent />
         </ScrollView>
       </View>
     </View>

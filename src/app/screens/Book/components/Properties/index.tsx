@@ -3,6 +3,7 @@ import { Entypo, Feather, Ionicons } from '@expo/vector-icons'
 import React from 'react'
 import { Text, View } from 'react-native'
 import Properties from '../../enums/Properties'
+import { globalStyles } from '../../styles'
 import BookIconButton from '../BookIconButton'
 import styles from './styles'
 
@@ -16,11 +17,11 @@ export default function PropertiesComponent({
   onButtonPress,
 }: PropertiesProps) {
   return (
-    <View style={styles.optionsContainer}>
+    <View style={globalStyles.optionsContainer}>
       {/* header */}
-      <View style={styles.propertyHeader}>
-        <View style={styles.line} />
-        <Text style={styles.headerTitle}>Type of Property</Text>
+      <View style={globalStyles.propertyHeader}>
+        <View style={globalStyles.line} />
+        <Text style={globalStyles.headerTitle}>Type of Property</Text>
       </View>
 
       {/* button group */}
