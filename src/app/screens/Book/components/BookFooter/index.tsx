@@ -1,13 +1,17 @@
+import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
-
 // styles
 import styles from './styles'
-
 // icons
 import { MaterialIcons } from '@expo/vector-icons'
-import React from 'react'
+// navigation
+import Service from '@/app/types/Service'
 
-export default function BookFooter() {
+type Props = {
+  data: Service
+}
+
+export default function BookFooter({ data }: Props) {
   return (
     <View style={styles.container}>
       {/* bill info */}
@@ -15,7 +19,7 @@ export default function BookFooter() {
         {/* price */}
         <View style={styles.billTextContainer}>
           <Text style={styles.billTotalText}>Total: </Text>
-          <Text style={styles.billPrice}>USD 150.05</Text>
+          <Text style={styles.billPrice}>USD {data.price}</Text>
         </View>
 
         <TouchableOpacity style={styles.billDetailsContainer}>

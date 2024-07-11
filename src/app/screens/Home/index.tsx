@@ -2,12 +2,13 @@ import React from 'react'
 // icons
 import { Feather } from '@expo/vector-icons'
 // components
-import { ScrollView, TextInput, View } from 'react-native'
-
 import PrimaryButton from '@/components/AppButton/PrimaryButton'
-import { ServicesData } from '@/data/services'
-import Theme from '@/styles/Theme'
+import { ScrollView, TextInput, View } from 'react-native'
 import ServiceListComponent from './components/ServiceList'
+// data
+import { ServicesData } from '@/data/services'
+// styles
+import Theme from '@/styles/Theme'
 import { styles } from './styles'
 
 export default function HomeScreen() {

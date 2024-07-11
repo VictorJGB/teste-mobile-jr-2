@@ -17,11 +17,17 @@ import {
 } from '@expo/vector-icons'
 
 // Navigation
+import Service from '@/app/types/Service'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationProp } from '@react-navigation/native'
 
 export type Screens = ['Home', 'Services', 'Bookings', 'Book']
-export type RootStackParamList = Record<Screens[number], undefined>
+export type RootStackParamList = {
+  Home: undefined
+  Services: undefined
+  Bookings: undefined
+  Book: { data: Service }
+}
 export type StackNavigation = NavigationProp<RootStackParamList>
 
 const { Navigator, Screen } = createBottomTabNavigator<RootStackParamList>()

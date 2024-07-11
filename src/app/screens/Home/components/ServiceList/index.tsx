@@ -1,6 +1,6 @@
 // react
 import React, { useState } from 'react'
-import { ScrollView, Text, View } from 'react-native'
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
 
 // styles
 import Theme from '@/styles/Theme'
@@ -8,11 +8,15 @@ import styles from './styles'
 
 // components
 import HeaderButton from './components/HeaderButton'
+import ServiceCard from './components/ServiceCard'
 
 // icons
 import ServiceList from '@/app/types/ServiceList'
 import { Feather, MaterialIcons } from '@expo/vector-icons'
-import ServiceCard from './components/ServiceCard'
+
+// navigation
+import { StackNavigation } from '@/routes'
+import { useNavigation } from '@react-navigation/native'
 
 type serviceListProps = {
   data: ServiceList
@@ -20,6 +24,7 @@ type serviceListProps = {
 
 export default function ServiceListComponent({ data }: serviceListProps) {
   const [layoutType, setLayoutType] = useState<'list' | 'grid'>('list')
+  const { navigate } = useNavigation<StackNavigation>()
 
   return (
     <View style={styles.container}>
@@ -81,7 +86,19 @@ export default function ServiceListComponent({ data }: serviceListProps) {
         contentContainerStyle={styles.scrollView}
       >
         {data.services.map((service, index) => {
-          return <ServiceCard key={index} data={service} />
+          return (
+            <TouchableOpacity
+              style={{ width: '100%' }}
+              key={index}
+              onPress={() =>
+                navigate('Book', {
+                  data: service,
+                })
+              }
+            >
+              <ServiceCard key={index} data={service} />
+            </TouchableOpacity>
+          )
         })}
       </ScrollView>
     </View>

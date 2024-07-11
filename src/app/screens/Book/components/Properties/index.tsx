@@ -1,11 +1,17 @@
-import Theme from '@/styles/Theme'
-import { Entypo, Feather, Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { Text, View } from 'react-native'
-import Properties from '../../enums/Properties'
+import { Text, TouchableOpacity, View } from 'react-native'
+// styles
+import Theme from '@/styles/Theme'
 import { globalStyles } from '../../styles'
-import BookIconButton from '../BookIconButton'
 import styles from './styles'
+// icons
+import { Entypo, EvilIcons, Feather, Ionicons } from '@expo/vector-icons'
+// enums
+import Properties from '../../enums/Properties'
+// components
+import { StackNavigation } from '@/routes'
+import { useNavigation } from '@react-navigation/native'
+import BookIconButton from '../BookIconButton'
 
 type PropertiesProps = {
   property: Properties
@@ -16,12 +22,20 @@ export default function PropertiesComponent({
   property,
   onButtonPress,
 }: PropertiesProps) {
+  const { goBack } = useNavigation<StackNavigation>()
+
   return (
     <View style={globalStyles.optionsContainer}>
       {/* header */}
       <View style={globalStyles.propertyHeader}>
         <View style={globalStyles.line} />
         <Text style={globalStyles.headerTitle}>Type of Property</Text>
+        <TouchableOpacity
+          style={{ marginLeft: 'auto' }}
+          onPress={() => goBack()}
+        >
+          <EvilIcons name="arrow-left" size={24} color="black" />
+        </TouchableOpacity>
       </View>
 
       {/* button group */}
