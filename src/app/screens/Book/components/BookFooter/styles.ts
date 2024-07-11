@@ -15,6 +15,74 @@ const styles = StyleSheet.create({
     gap: 20,
     backgroundColor: Theme.colors.background,
   },
+  billContainer: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  billTextContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  billTotalText: {
+    fontSize: Theme.fonts.sizes.base,
+    fontFamily: Theme.fonts.fontFamily.medium,
+    color: '#6F767E',
+  },
+  billPrice: {
+    fontSize: Theme.fonts.sizes.base,
+    fontFamily: Theme.fonts.fontFamily.bold,
+    color: Theme.colors.black,
+  },
+  billDetailsContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 7,
+  },
+  billDetailLabel: {
+    fontSize: Theme.fonts.sizes.base,
+    fontFamily: Theme.fonts.fontFamily.medium,
+    color: '#FC944D',
+  },
+  buttonGroup: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+  },
+  draftButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    backgroundColor: '#FCFCFC',
+    borderWidth: 2,
+    borderColor: '#EFEFEF',
+    borderRadius: 12,
+  },
+  draftButtonText: {
+    fontSize: Theme.fonts.sizes.baseAlternative,
+    fontFamily: Theme.fonts.fontFamily.bold,
+    color: Theme.colors.black,
+  },
+  submitButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    backgroundColor: Theme.colors.primary.background,
+    borderColor: Theme.colors.primary.background,
+    borderWidth: 2,
+    borderRadius: 12,
+  },
+  submitButtonText: {
+    fontSize: Theme.fonts.sizes.baseAlternative,
+    fontFamily: Theme.fonts.fontFamily.bold,
+    color: Theme.colors.background,
+  },
 })
 
 export default styles

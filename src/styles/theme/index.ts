@@ -46,6 +46,7 @@ const Theme = {
       sm: 12,
       smAlternative: 13,
       base: 14,
+      baseAlternative: 15,
       lg: 16,
       'heading-3': 18,
       'heading-2': 20,
