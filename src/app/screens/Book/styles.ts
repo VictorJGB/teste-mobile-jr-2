@@ -7,11 +7,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     backgroundColor: Theme.colors.backgroundIce,
+    position: 'relative',
   },
   ImageBackground: {
     width: '100%',
     height: 255,
-    position: 'relative',
   },
   gradient: {
     flex: 1,
@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
   },
   bookContainer: {
     width: '100%',
-    height: 'auto',
+    zIndex: 2,
     position: 'absolute',
-    bottom: 20,
+    top: 220,
     alignSelf: 'center',
     paddingHorizontal: 16,
   },
