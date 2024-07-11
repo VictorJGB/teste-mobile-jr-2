@@ -14,8 +14,8 @@ import styles from './styles'
 import Theme from '@/styles/Theme'
 import { AntDesign } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
-import Properties from './components/enums/Properties'
 import PropertiesComponent from './components/Properties'
+import Properties from './enums/Properties'
 
 export default function BookScreen() {
   const [property, setProperty] = useState<Properties>(Properties.home)

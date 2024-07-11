@@ -1,8 +1,9 @@
 import Theme from '@/styles/Theme'
 import { Entypo, Feather, Ionicons } from '@expo/vector-icons'
 import React from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
-import Properties from '../enums/Properties'
+import { Text, View } from 'react-native'
+import Properties from '../../enums/Properties'
+import BookIconButton from '../BookIconButton'
 import styles from './styles'
 
 type PropertiesProps = {
@@ -25,88 +26,67 @@ export default function PropertiesComponent({
       {/* button group */}
       <View style={styles.buttonGroup}>
         {/* home property */}
-        <TouchableOpacity
-          style={styles.bookButton}
+        <BookIconButton
+          text="Home"
           onPress={() => onButtonPress(Properties.home)}
+          iconContainerStyle={
+            property === Properties.home && {
+              borderColor: Theme.colors.primary.background,
+            }
+          }
         >
-          <View
-            style={[
-              styles.bookIconContainer,
+          <Feather
+            name="home"
+            size={24}
+            color={
               property === Properties.home
-                ? { borderColor: Theme.colors.primary.background }
-                : {
-                    borderColor: '#D1D3D4',
-                  },
-            ]}
-          >
-            <Feather
-              name="home"
-              size={24}
-              color={
-                property === Properties.home
-                  ? Theme.colors.primary.background
-                  : '#D1D3D4'
-              }
-            />
-          </View>
-          <Text style={styles.bookButtonText}>Home</Text>
-        </TouchableOpacity>
+                ? Theme.colors.primary.background
+                : '#D1D3D4'
+            }
+          />
+        </BookIconButton>
 
         {/* office property */}
-        <TouchableOpacity
-          style={styles.bookButton}
+        <BookIconButton
+          text="Office"
           onPress={() => onButtonPress(Properties.office)}
+          iconContainerStyle={
+            property === Properties.office && {
+              borderColor: Theme.colors.primary.background,
+            }
+          }
         >
-          <View
-            style={[
-              styles.bookIconContainer,
+          <Ionicons
+            name="business"
+            size={24}
+            color={
               property === Properties.office
-                ? { borderColor: Theme.colors.primary.background }
-                : {
-                    borderColor: '#D1D3D4',
-                  },
-            ]}
-          >
-            <Ionicons
-              name="business"
-              size={24}
-              color={
-                property === Properties.office
-                  ? Theme.colors.primary.background
-                  : '#D1D3D4'
-              }
-            />
-          </View>
-          <Text style={styles.bookButtonText}>Office</Text>
-        </TouchableOpacity>
+                ? Theme.colors.primary.background
+                : '#D1D3D4'
+            }
+          />
+        </BookIconButton>
 
         {/* vila property */}
-        <TouchableOpacity
-          style={styles.bookButton}
+        <BookIconButton
+          text="Vila"
           onPress={() => onButtonPress(Properties.vila)}
+          iconContainerStyle={
+            property === Properties.vila && {
+              borderColor: Theme.colors.primary.background,
+            }
+          }
         >
-          <View
-            style={[
-              styles.bookIconContainer,
+          <Entypo
+            name="shop"
+            size={24}
+            color={
               property === Properties.vila
-                ? { borderColor: Theme.colors.primary.background }
-                : {
-                    borderColor: '#D1D3D4',
-                  },
-            ]}
-          >
-            <Entypo
-              name="shop"
-              size={24}
-              color={
-                property === Properties.vila
-                  ? Theme.colors.primary.background
-                  : '#D1D3D4'
-              }
-            />
-          </View>
-          <Text style={styles.bookButtonText}>Vila</Text>
-        </TouchableOpacity>
+                ? Theme.colors.primary.background
+                : '#D1D3D4'
+            }
+          />
+        </BookIconButton>
       </View>
     </View>
   )
