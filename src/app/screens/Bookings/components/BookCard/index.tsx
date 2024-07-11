@@ -22,7 +22,7 @@ export default function BookCard({ data }: Props) {
         <View>
           <Image
             style={{ width: 30 }}
-            source={require("@/assets/svg/ac-category")}
+            source={require("@/assets/svg/ac-category.svg")}
           />
         </View>
 
@@ -59,10 +59,10 @@ export default function BookCard({ data }: Props) {
         <View>
           {/* logo */}
           <View>
-            <Image
+            {/* <Image
               style={{ width: 25 }}
               source={require(data.service.provider.logo)}
-            />
+            /> */}
           </View>
           <View>
             <Text>{data.service.provider.name}</Text>

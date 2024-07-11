@@ -17,7 +17,7 @@ const ServicesData: ServiceList[] = [
         price: 128,
         provider: {
           name: "Westinghouse",
-          logo: "@/assets/images/westinghouse",
+          logo: "@/assets/images/westinghouse.png",
         },
       },
       {
@@ -32,7 +32,7 @@ const ServicesData: ServiceList[] = [
         price: 128,
         provider: {
           name: "Sindenayu",
-          logo: "@/assets/images/sindenayu",
+          logo: "@/assets/images/sindenayu.png",
         },
       },
       {
@@ -47,7 +47,7 @@ const ServicesData: ServiceList[] = [
         price: 170,
         provider: {
           name: "Westinghouse",
-          logo: "@/assets/images/westinghouse",
+          logo: "@/assets/images/westinghouse.png",
         },
       },
       {
@@ -62,7 +62,7 @@ const ServicesData: ServiceList[] = [
         price: 170,
         provider: {
           name: "Sindenayu",
-          logo: "@/assets/images/sindenayu",
+          logo: "@/assets/images/sindenayu.png",
         },
       },
     ],
