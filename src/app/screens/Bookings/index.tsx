@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 
 // components
 import FilterButton from "./components/FilterButton";
+import UpcomingContent from "./components/UpcomingContent";
 // styles
-import { useState } from "react";
-import NoContentComponent from "./components/NoContent";
+import { BooksData } from "@/data/books";
 import styles from "./styles";
 
 enum Filters {
@@ -45,7 +46,8 @@ export default function BookingsScreen() {
         </View>
         {/* bookings content */}
         <ScrollView contentContainerStyle={styles.bookingsContent}>
-          <NoContentComponent />
+          {/* <NoContentComponent /> */}
+          <UpcomingContent data={BooksData[0]} />
         </ScrollView>
       </View>
     </View>

@@ -13,9 +13,9 @@ type Props = {
   data: Book;
 };
 
-export default function UpComingBooking({ data }: Props) {
+export default function BookCard({ data }: Props) {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       {/* header */}
       <View>
         {/* image container */}
