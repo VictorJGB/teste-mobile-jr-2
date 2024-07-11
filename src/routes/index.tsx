@@ -41,11 +41,12 @@ const themeColor = Theme.colors
 function ScreenTabs() {
   return (
     <TabNavigator
+      initialRouteName="Bookings"
       sceneContainerStyle={{
         backgroundColor: Theme.colors.backgroundIce,
       }}
-      initialRouteName="Home"
       screenOptions={{
+        headerShown: false,
         tabBarActiveTintColor: themeColor.tabButton.selected.textColor,
         tabBarInactiveTintColor: themeColor.tabButton.unselected.textColor,
         tabBarIconStyle: {
