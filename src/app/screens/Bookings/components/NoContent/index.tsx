@@ -11,7 +11,10 @@ export default function NoContentComponent() {
   const { navigate } = useNavigation<StackNavigation>();
   return (
     <View style={styles.container}>
-      <Image source={require("../../assets/check-list.png")} />
+      <Image
+        style={styles.image}
+        source={require("../../assets/check-list.png")}
+      />
       <View style={styles.noContentText}>
         <Text style={styles.noContentTitle}>No Upcoming Order</Text>
         <Text style={styles.noContentParagraph}>

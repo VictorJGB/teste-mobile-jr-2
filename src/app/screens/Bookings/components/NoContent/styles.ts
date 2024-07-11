@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 32,
   },
+  image: {
+    width: 86,
+    height: 86,
+  },
   noContentText: {
     display: "flex",
     flexDirection: "column",
