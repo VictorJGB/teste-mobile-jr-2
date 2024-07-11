@@ -20,6 +20,7 @@ import {
 import Service from '@/app/types/Service'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationProp } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 export type Screens = ['Home', 'Services', 'Bookings', 'Book']
 export type RootStackParamList = {
@@ -30,13 +31,16 @@ export type RootStackParamList = {
 }
 export type StackNavigation = NavigationProp<RootStackParamList>
 
-const { Navigator, Screen } = createBottomTabNavigator<RootStackParamList>()
+const { Navigator: TabNavigator, Screen: TabScreen } =
+  createBottomTabNavigator<RootStackParamList>()
+const { Navigator: StackNavigator, Screen } =
+  createNativeStackNavigator<RootStackParamList>()
 
 const themeColor = Theme.colors
 
-export function Routes() {
+function ScreenTabs() {
   return (
-    <Navigator
+    <TabNavigator
       sceneContainerStyle={{
         backgroundColor: Theme.colors.backgroundIce,
       }}
@@ -50,7 +54,7 @@ export function Routes() {
         tabBarShowLabel: false,
       }}
     >
-      <Screen
+      <TabScreen
         name="Home"
         component={HomeScreen}
         options={{
@@ -60,7 +64,7 @@ export function Routes() {
           },
         }}
       />
-      <Screen
+      <TabScreen
         name="Bookings"
         component={BookingsScreen}
         options={{
@@ -75,7 +79,7 @@ export function Routes() {
           },
         }}
       />
-      <Screen
+      <TabScreen
         name="Services"
         component={ServicesScreen}
         options={{
@@ -97,22 +101,27 @@ export function Routes() {
           },
         }}
       />
+    </TabNavigator>
+  )
+}
+
+export function Routes() {
+  return (
+    <StackNavigator initialRouteName="Home">
+      <Screen
+        name="Home"
+        component={ScreenTabs}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Screen
         name="Book"
         component={BookScreen}
         options={{
           headerShown: false,
-          tabBarIcon: ({ color, size }) => {
-            return (
-              <MaterialCommunityIcons
-                name="message-text-outline"
-                size={size}
-                color={color}
-              />
-            )
-          },
         }}
       />
-    </Navigator>
+    </StackNavigator>
   )
 }
