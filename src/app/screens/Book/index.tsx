@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   ImageBackground,
+  ScrollView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -41,97 +42,99 @@ export default function BookScreen() {
       </ImageBackground>
 
       {/* book options */}
-      <View>
-        {/* Property container */}
-        <View>
-          {/* header */}
+      <View style={styles.bookContainer}>
+        <ScrollView contentContainerStyle={styles.bookContent}>
+          {/* Property container */}
           <View>
-            <View />
-            <Text>Type of Property</Text>
-          </View>
-        </View>
-
-        {/* button group */}
-        <View>
-          {/* home property */}
-          <TouchableOpacity>
+            {/* header */}
             <View>
-              <Feather name="home" size={24} color="#D1D3D4" />
-            </View>
-            <Text>Home</Text>building
-          </TouchableOpacity>
-
-          {/* office property */}
-          <TouchableOpacity>
-            <View>
-              <Ionicons
-                name="business"
-                size={24}
-                color={Theme.colors.primary.background}
-              />
-            </View>
-            <Text>Office</Text>
-          </TouchableOpacity>
-
-          {/* vila property */}
-          <TouchableOpacity>
-            <View>
-              <Entypo name="shop" size={24} color="black" />
-            </View>
-            <Text>Vila</Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* Quantity container */}
-        <View>
-          {/* Units */}
-          <View>
-            <Text>Number of units</Text>
-
-            {/* button group */}
-            <View>
-              <TouchableOpacity>
-                <AntDesign name="minus" size={24} color="black" />
-              </TouchableOpacity>
-              <Text>2</Text>
-              <TouchableOpacity>
-                <AntDesign name="plus" size={24} color="black" />
-              </TouchableOpacity>
+              <View />
+              <Text>Type of Property</Text>
             </View>
           </View>
 
-          {/* Bedrooms */}
+          {/* button group */}
           <View>
-            <Text>Number of Bedrooms</Text>
+            {/* home property */}
+            <TouchableOpacity>
+              <View>
+                <Feather name="home" size={24} color="#D1D3D4" />
+              </View>
+              <Text>Home</Text>building
+            </TouchableOpacity>
 
-            {/* button group */}
+            {/* office property */}
+            <TouchableOpacity>
+              <View>
+                <Ionicons
+                  name="business"
+                  size={24}
+                  color={Theme.colors.primary.background}
+                />
+              </View>
+              <Text>Office</Text>
+            </TouchableOpacity>
+
+            {/* vila property */}
+            <TouchableOpacity>
+              <View>
+                <Entypo name="shop" size={24} color="black" />
+              </View>
+              <Text>Vila</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Quantity container */}
+          <View>
+            {/* Units */}
             <View>
-              <TouchableOpacity>
-                <AntDesign name="minus" size={24} color="black" />
-              </TouchableOpacity>
-              <Text>0</Text>
-              <TouchableOpacity>
-                <AntDesign name="plus" size={24} color="black" />
-              </TouchableOpacity>
+              <Text>Number of units</Text>
+
+              {/* button group */}
+              <View>
+                <TouchableOpacity>
+                  <AntDesign name="minus" size={24} color="black" />
+                </TouchableOpacity>
+                <Text>2</Text>
+                <TouchableOpacity>
+                  <AntDesign name="plus" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            {/* Bedrooms */}
+            <View>
+              <Text>Number of Bedrooms</Text>
+
+              {/* button group */}
+              <View>
+                <TouchableOpacity>
+                  <AntDesign name="minus" size={24} color="black" />
+                </TouchableOpacity>
+                <Text>0</Text>
+                <TouchableOpacity>
+                  <AntDesign name="plus" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-        </View>
 
-        {/* Description container */}
-        <View>
-          {/* header */}
+          {/* Description container */}
           <View>
-            <View />
-            <Text>Description</Text>
-          </View>
+            {/* header */}
+            <View>
+              <View />
+              <Text>Description</Text>
+            </View>
 
-          {/* textarea */}
-          <TextInput
-            multiline
-            numberOfLines={5}
-            placeholder="Write an description..."
-          />
-        </View>
+            {/* textarea */}
+            <TextInput
+              multiline
+              numberOfLines={5}
+              placeholder="Write an description..."
+            />
+          </View>
+        </ScrollView>
       </View>
     </View>
   )

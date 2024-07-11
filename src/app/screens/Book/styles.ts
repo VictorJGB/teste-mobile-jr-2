@@ -6,10 +6,12 @@ const styles = StyleSheet.create({
     flex: 1,
     display: 'flex',
     alignItems: 'center',
+    backgroundColor: Theme.colors.backgroundIce,
   },
   ImageBackground: {
     width: '100%',
     height: 255,
+    position: 'relative',
   },
 
   gradient: {
@@ -42,6 +44,24 @@ const styles = StyleSheet.create({
     fontFamily: Theme.fonts.fontFamily.bold,
     color: Theme.colors.background,
     maxWidth: '50%',
+  },
+  bookContainer: {
+    width: '100%',
+    position: 'absolute',
+    bottom: 5,
+    alignSelf: 'center',
+    paddingHorizontal: 16,
+    backgroundColor: 'transparent',
+  },
+  bookContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    backgroundColor: Theme.colors.background,
+    gap: 8,
+    padding: 16,
   },
 })
 
