@@ -1,19 +1,18 @@
-import RootLayout from "@/layout/root-layout";
-import { Routes } from "@/routes";
+import { BookingProvider } from '@/context/booking'
+import RootLayout from '@/layout/root-layout'
+import { Routes } from '@/routes'
 
-import Theme from "@/styles/Theme";
-import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import { ThemeProvider } from "styled-components/native";
+import { NavigationContainer } from '@react-navigation/native'
+import React from 'react'
 
 export default function App() {
   return (
-    <ThemeProvider theme={Theme}>
+    <BookingProvider>
       <RootLayout>
         <NavigationContainer>
           <Routes />
         </NavigationContainer>
       </RootLayout>
-    </ThemeProvider>
-  );
+    </BookingProvider>
+  )
 }

@@ -6,12 +6,12 @@ export const BooksData: Book[] = [
     service: ServicesData[0].services[0],
     referenceCode: '#D-571224',
     schedule: '8:00-9:00 AM,  09 Dec',
-    status: 'Confirmed',
+    status: 'confirmed',
   },
   {
     service: ServicesData[0].services[1],
     referenceCode: '#D-571224',
     schedule: '8:00-9:00 AM,  09 Dec',
-    status: 'Pending',
+    status: 'pending',
   },
 ]
