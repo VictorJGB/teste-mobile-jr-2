@@ -1,4 +1,4 @@
-## Project Name
+## Teste Mobile JR 2 `unfinished`
 A React Native project using Expo for the mobile job vacancy test on Guató Digital.
 
 ## Techonolgies
@@ -22,13 +22,8 @@ Getting Started
 - clone the repository </br> `git clone https://github.com/VictorJGB/teste-mobile-jr-2` </br> </br>
 - install the dependencies </br> `npm install` </br> </br>
 - run the project </br> `npm run start` </br> </br>
-- OBS: I renamed my `theme` folder, but ,for some reason, my commits don't push those changes, be sure to rename the `theme` folder to `Theme`, in case of any error!
 
-License
-This project is licensed under the MIT License.
+## Observations
+- I renamed my `theme` folder, but ,for some reason, my commits don't push those changes, be sure to rename the `theme` folder to `Theme`, in case of any error!
 
-Contributing
-Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
-
-Acknowledgments
-This project was built using Expo, React Navigation, and Styled Components. Thanks to the maintainers of these libraries for their hard work!
+## Enjoy the project
