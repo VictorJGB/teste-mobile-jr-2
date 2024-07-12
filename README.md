@@ -23,6 +23,11 @@ Getting Started
 - install the dependencies </br> `npm install` </br> </br>
 - run the project </br> `npm run start` </br> </br>
 
+## Screenshots
+![shot-01](https://github.com/user-attachments/assets/749ff9dc-e891-4f54-b7eb-2ff6f31a9ae9)
+![shot-02](https://github.com/user-attachments/assets/70d6a024-330b-4488-ab59-41629629e3b6)
+
+
 ## Observations
 - I renamed my `theme` folder, but ,for some reason, my commits don't push those changes, be sure to rename the `theme` folder to `Theme`, in case of any error!
 
