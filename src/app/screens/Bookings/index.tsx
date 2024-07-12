@@ -5,9 +5,10 @@ import { ScrollView, Text, View } from 'react-native'
 import FilterButton from './components/FilterButton'
 import UpcomingContent from './components/UpcomingContent'
 // styles
-import { BooksData } from '@/data/books'
+import { useBookingContext } from '@/context/booking'
 import DraftComponent from './components/DraftContent'
 import HistoryComponent from './components/History'
+import NoContentComponent from './components/NoContent'
 import styles from './styles'
 
 enum Filters {
@@ -18,6 +19,17 @@ enum Filters {
 
 export default function BookingsScreen() {
   const [filterType, setFilterType] = useState<Filters>(Filters.upcoming)
+  const { books } = useBookingContext()
+
+  function handleContent() {
+    if (!books) return <NoContentComponent />
+
+    if (filterType === Filters.upcoming) return <UpcomingContent data={books} />
+
+    if (filterType === Filters.history) return <HistoryComponent />
+
+    if (filterType === Filters.draft) return <DraftComponent />
+  }
 
   return (
     <View style={styles.container}>
@@ -48,15 +60,7 @@ export default function BookingsScreen() {
         </View>
         {/* bookings content */}
         <ScrollView contentContainerStyle={styles.bookingsContent}>
-          {/* <NoContentComponent /> */}
-          {/* Upcoming component */}
-          {filterType === Filters.upcoming && (
-            <UpcomingContent data={BooksData[0]} />
-          )}
-          {/* History content */}
-          {filterType === Filters.history && <HistoryComponent />}
-          {/* Draft component */}
-          {filterType === Filters.draft && <DraftComponent />}
+          {handleContent()}
         </ScrollView>
       </View>
     </View>
