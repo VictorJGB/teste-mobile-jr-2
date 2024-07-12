@@ -6,29 +6,27 @@ import FilterButton from './components/FilterButton'
 import UpcomingContent from './components/UpcomingContent'
 // styles
 import { useBookingContext } from '@/context/booking'
+import { BookingType } from '@/enums/Booking'
 import DraftComponent from './components/DraftContent'
 import HistoryComponent from './components/History'
 import NoContentComponent from './components/NoContent'
 import styles from './styles'
 
-enum Filters {
-  upcoming,
-  history,
-  draft,
-}
-
 export default function BookingsScreen() {
-  const [filterType, setFilterType] = useState<Filters>(Filters.upcoming)
+  const [filterType, setFilterType] = useState<BookingType>(
+    BookingType.upcoming,
+  )
   const { books } = useBookingContext()
 
   function handleContent() {
     if (!books) return <NoContentComponent />
 
-    if (filterType === Filters.upcoming) return <UpcomingContent data={books} />
+    if (filterType === BookingType.upcoming)
+      return <UpcomingContent data={books} />
 
-    if (filterType === Filters.history) return <HistoryComponent />
+    if (filterType === BookingType.history) return <HistoryComponent />
 
-    if (filterType === Filters.draft) return <DraftComponent />
+    if (filterType === BookingType.draft) return <DraftComponent />
   }
 
   return (
@@ -43,18 +41,18 @@ export default function BookingsScreen() {
         {/* button group */}
         <View style={styles.buttonGroup}>
           <FilterButton
-            isSelected={filterType === Filters.upcoming}
-            onPress={() => setFilterType(Filters.upcoming)}
+            isSelected={filterType === BookingType.upcoming}
+            onPress={() => setFilterType(BookingType.upcoming)}
             title="Upcoming"
           />
           <FilterButton
-            isSelected={filterType === Filters.history}
-            onPress={() => setFilterType(Filters.history)}
+            isSelected={filterType === BookingType.history}
+            onPress={() => setFilterType(BookingType.history)}
             title="History"
           />
           <FilterButton
-            isSelected={filterType === Filters.draft}
-            onPress={() => setFilterType(Filters.draft)}
+            isSelected={filterType === BookingType.draft}
+            onPress={() => setFilterType(BookingType.draft)}
             title="Draft"
           />
         </View>
