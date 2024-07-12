@@ -8,6 +8,7 @@ import { Image } from "expo-image";
 
 // icons
 import { Feather } from "@expo/vector-icons";
+import styles from "./styles";
 
 type Props = {
   data: Book;
@@ -15,31 +16,33 @@ type Props = {
 
 export default function BookCard({ data }: Props) {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       {/* header */}
-      <View>
+      <View style={styles.header}>
         {/* image container */}
-        <View>
+        <View style={styles.categoryImage}>
           <Image
-            style={{ width: 30 }}
+            style={{ width: 30, height: 20 }}
             source={require("@/assets/svg/ac-category.svg")}
           />
         </View>
 
         {/* infos */}
-        <View>
-          <Text>{data.service.title}</Text>
-          <Text>Reference Code:{data.referenceCode}</Text>
+        <View style={styles.headerInfo}>
+          <Text style={styles.headerTitle}>{data.service.title}</Text>
+          <Text style={styles.headerSubtitle}>
+            Reference Code:{data.referenceCode}
+          </Text>
         </View>
       </View>
 
       {/* divider */}
-      <View />
+      <View style={styles.divider} />
 
       {/* body */}
-      <View>
+      <View style={styles.cardBody}>
         {/* body header */}
-        <View>
+        <View style={styles.bodyHeader}>
           <Text>Status</Text>
           <Text>{data.status}</Text>
         </View>
