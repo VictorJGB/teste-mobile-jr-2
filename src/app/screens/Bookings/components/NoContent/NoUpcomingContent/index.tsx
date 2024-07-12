@@ -7,14 +7,14 @@ import { Image } from 'expo-image'
 import { StackNavigation } from '@/routes'
 import { useNavigation } from '@react-navigation/native'
 
-export default function NoContentComponent() {
+export default function NoUpcomingContent() {
   const { navigate } = useNavigation<StackNavigation>()
   return (
     <View style={styles.container}>
       <Image
         alt="check-list"
         style={styles.image}
-        source={require('../../assets/check-list.png')}
+        source={require('../../../assets/check-list.png')}
       />
       <View style={styles.noContentText}>
         <Text style={styles.noContentTitle}>No Upcoming Order</Text>

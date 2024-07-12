@@ -55,9 +55,8 @@ export default function BookScreen({ route }: Props) {
           bookingType,
           ...registerBook,
         }
-        setRegisterBook(newRegistry)
         if (books) {
-          const updatedBooks: Book[] = [...books, registerBook]
+          const updatedBooks: Book[] = [...books, newRegistry]
           setBooks(updatedBooks)
         } else {
           setBooks([registerBook])

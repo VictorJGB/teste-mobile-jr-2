@@ -10,18 +10,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 32,
   },
-  dataContainer: {
-    flex: 1,
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  image: {
-    width: 86,
-    height: 86,
-  },
   noContentText: {
     display: 'flex',
     flexDirection: 'column',
@@ -39,23 +27,6 @@ const styles = StyleSheet.create({
     fontSize: Theme.fonts.sizes.base,
     color: '#535763',
     textAlign: 'center',
-  },
-  allServicesButton: {
-    maxWidth: 'auto',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-
-    paddingVertical: 12,
-    paddingHorizontal: 22,
-
-    borderRadius: 8,
-
-    backgroundColor: Theme.colors.primary.background,
-
-    fontFamily: Theme.fonts.fontFamily.bold,
-    fontSize: Theme.fonts.sizes.baseAlternative,
-    color: Theme.colors.background,
   },
 })
 
