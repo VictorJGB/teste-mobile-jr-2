@@ -2,7 +2,7 @@ const Theme = {
   colors: {
     background: '#FFFFFF',
     backgroundIce: '#F9F9F9',
-    grey: '#CABDFF',
+    grey: '#6F767E',
     black: '#1A1D1F',
     primary: {
       background: '#6759FF',

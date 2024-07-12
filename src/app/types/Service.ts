@@ -1,16 +1,16 @@
 type Service = {
-  image: string;
+  image: string
   stars: {
-    score: number;
-    quantity: number;
-  };
-  title: string;
-  startsFrom: string;
-  price: number;
+    score: number
+    quantity: number
+  }
+  title: string
+  startsFrom: string
+  price: number
   provider: {
-    name: string;
-    logo: string;
-  };
-};
+    name: string
+    logo: string
+  }
+}
 
-export default Service;
+export default Service

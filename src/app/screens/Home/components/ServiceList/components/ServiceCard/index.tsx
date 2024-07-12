@@ -6,6 +6,7 @@ import { AntDesign, SimpleLineIcons } from '@expo/vector-icons'
 
 import Service from '@/app/types/Service'
 import styles from './style'
+import Theme from '@/styles/Theme'
 
 type cardProps = {
   data: Service
@@ -44,7 +45,7 @@ export default function ServiceCard({ data }: cardProps) {
       </View>
       {/* options */}
       <TouchableOpacity style={styles.optionsContainer}>
-        <SimpleLineIcons name="options" size={20} color="#6F767E" />
+        <SimpleLineIcons name="options" size={20} color={Theme.colors.grey} />
       </TouchableOpacity>
     </View>
   )

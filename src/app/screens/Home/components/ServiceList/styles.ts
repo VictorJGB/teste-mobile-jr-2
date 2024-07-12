@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     height: 20,
     width: 4,
     borderRadius: 4,
-    backgroundColor: Theme.colors.grey,
+    backgroundColor: '#CABDFF',
   },
   buttonGroup: {
     display: 'flex',

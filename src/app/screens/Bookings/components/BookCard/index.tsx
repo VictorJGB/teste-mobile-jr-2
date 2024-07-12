@@ -1,18 +1,19 @@
-import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React from 'react'
+import { Text, TouchableOpacity, View } from 'react-native'
 
 // types
-import Book from "@/app/types/Book";
+import Book from '@/app/types/Book'
 // expo
-import { Image } from "expo-image";
+import { Image } from 'expo-image'
 
 // icons
-import { Feather } from "@expo/vector-icons";
-import styles from "./styles";
+import Theme from '@/styles/Theme'
+import { Feather } from '@expo/vector-icons'
+import styles from './styles'
 
 type Props = {
-  data: Book;
-};
+  data: Book
+}
 
 export default function BookCard({ data }: Props) {
   return (
@@ -22,8 +23,9 @@ export default function BookCard({ data }: Props) {
         {/* image container */}
         <View style={styles.categoryImage}>
           <Image
+            alt="category icon"
             style={{ width: 30, height: 20 }}
-            source={require("@/assets/svg/ac-category.svg")}
+            source={require('@/assets/svg/ac-category.svg')}
           />
         </View>
 
@@ -43,40 +45,51 @@ export default function BookCard({ data }: Props) {
       <View style={styles.cardBody}>
         {/* body header */}
         <View style={styles.bodyHeader}>
-          <Text>Status</Text>
-          <Text>{data.status}</Text>
+          <Text style={styles.statusLabel}>Status</Text>
+          <Text
+            style={
+              data.status === 'confirmed'
+                ? styles.statusConfirmed
+                : styles.statusPending
+            }
+          >
+            {data.status}
+          </Text>
         </View>
 
         {/* schedule */}
-        <View>
-          <View>
-            <Feather name="calendar" size={24} color="black" />
+        <View style={styles.scheduleContainer}>
+          <View style={styles.scheduleIconContainer}>
+            <Feather name="calendar" size={18} color={Theme.colors.grey} />
           </View>
-          <View>
-            <Text>{data.schedule}</Text>
-            <Text>Schedule</Text>
+          <View style={styles.scheduleInfoContainer}>
+            <Text style={styles.scheduleDate}>{data.schedule}</Text>
+            <Text style={styles.scheduleLabel}>Schedule</Text>
           </View>
         </View>
 
         {/* provider */}
-        <View>
+        <View style={styles.providerContainer}>
           {/* logo */}
-          <View>
-            {/* <Image
+          <View style={styles.providerLogoContainer}>
+            <Image
+              alt="providerLogo"
               style={{ width: 25 }}
-              source={require(data.service.provider.logo)}
-            /> */}
+              source={data.service.provider.logo}
+            />
           </View>
-          <View>
-            <Text>{data.service.provider.name}</Text>
-            <Text>Service provider</Text>
+          <View style={styles.providerInfoContainer}>
+            <Text style={styles.providerName}>
+              {data.service.provider.name}
+            </Text>
+            <Text style={styles.providerLabel}>Service provider</Text>
           </View>
-          <TouchableOpacity>
-            <Feather name="phone" size={24} color="black" />
-            <Text>call</Text>
+          <TouchableOpacity style={styles.callButton}>
+            <Feather name="phone" size={24} color="#FCFCFC" />
+            <Text style={styles.callButtonText}>call</Text>
           </TouchableOpacity>
         </View>
       </View>
     </View>
-  );
+  )
 }

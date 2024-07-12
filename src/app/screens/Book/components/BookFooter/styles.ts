@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   billTotalText: {
     fontSize: Theme.fonts.sizes.base,
     fontFamily: Theme.fonts.fontFamily.medium,
-    color: '#6F767E',
+    color: Theme.colors.grey,
   },
   billPrice: {
     fontSize: Theme.fonts.sizes.base,

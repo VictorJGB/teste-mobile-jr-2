@@ -1,4 +1,4 @@
-import ServiceList from "@/app/types/ServiceList";
+import ServiceList from '@/app/types/ServiceList'
 
 /* eslint-disable prettier/prettier */
 const ServicesData: ServiceList[] = [
@@ -17,7 +17,7 @@ const ServicesData: ServiceList[] = [
         price: 128,
         provider: {
           name: "Westinghouse",
-          logo: "@/assets/images/westinghouse.png",
+          logo: require("@/assets/images/westinghouse.png"),
         },
       },
       {
@@ -32,7 +32,7 @@ const ServicesData: ServiceList[] = [
         price: 128,
         provider: {
           name: "Sindenayu",
-          logo: "@/assets/images/sindenayu.png",
+          logo: require("@/assets/images/sindenayu.png"),
         },
       },
       {
@@ -47,7 +47,7 @@ const ServicesData: ServiceList[] = [
         price: 170,
         provider: {
           name: "Westinghouse",
-          logo: "@/assets/images/westinghouse.png",
+          logo: require("@/assets/images/westinghouse.png"),
         },
       },
       {
@@ -62,11 +62,12 @@ const ServicesData: ServiceList[] = [
         price: 170,
         provider: {
           name: "Sindenayu",
-          logo: "@/assets/images/sindenayu.png",
+          logo: require("@/assets/images/sindenayu.png"),
         },
       },
     ],
   },
-];
+]
 
-export { ServicesData };
+export { ServicesData }
+

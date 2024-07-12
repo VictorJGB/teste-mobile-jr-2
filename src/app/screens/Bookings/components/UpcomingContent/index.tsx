@@ -1,16 +1,22 @@
-import Book from "@/app/types/Book";
-import React from "react";
-import { View } from "react-native";
-import BookCard from "../BookCard";
+import React from 'react'
+import { View } from 'react-native'
+
+// types
+import Book from '@/app/types/Book'
+
+// components
+import BookCard from '../BookCard'
+
+import styles from './styles'
 
 type Props = {
-  data: Book;
-};
+  data: Book
+}
 
 export default function UpcomingContent({ data }: Props) {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <BookCard data={data} />
     </View>
-  );
+  )
 }

@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   starQuantity: {
     fontSize: Theme.fonts.sizes.sm,
     fontFamily: Theme.fonts.fontFamily.bold,
-    color: '#6F767E',
+    color: Theme.colors.grey,
   },
   serviceTitle: {
     fontSize: Theme.fonts.sizes.base,
