@@ -5,6 +5,7 @@ A React Native project using Expo for the mobile job vacancy test on Guató Digi
 This was the required technologies for the test
 - React Navigation ( [Read more](https://reactnavigation.org/) )
 - React Native Stylesheet ( [Read more](https://reactnative.dev/docs/stylesheet) )
+- Styled Components ( [Read more](https://styled-components.com/) )
 - Expo ( [Read more](https://expo.dev/) )
 
 ## Dependencies
@@ -18,7 +19,10 @@ To power up this project i use the following dependencies:
 - TypeScript: Type checking. ( [Read more](https://www.typescriptlang.org/) )
   
 Getting Started
-To get started with this project, clone the repository and run npm install to install the dependencies. Then, run npm start to start the development server.
+- clone the repository </br> `git clone https://github.com/VictorJGB/teste-mobile-jr-2` </br> </br>
+- install the dependencies </br> `npm install` </br> </br>
+- run the project </br> `npm run start` </br> </br>
+- OBS: I renamed my `theme` folder, but ,for some reason, my commits don't push those changes, be sure to rename the `theme` folder to `Theme`, in case of any error!
 
 License
 This project is licensed under the MIT License.
