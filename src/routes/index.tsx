@@ -1,42 +1,43 @@
-import React from 'react'
+import React from "react";
 
 // screens
-import BookScreen from '@/app/screens/Book'
-import BookingsScreen from '@/app/screens/Bookings'
-import HomeScreen from '@/app/screens/Home'
-import ServicesScreen from '@/app/screens/Services'
+import BookScreen from "@/app/screens/Book";
+import BookingsScreen from "@/app/screens/Bookings";
+import HomeScreen from "@/app/screens/Home";
 
 // Themes
-import Theme from '@/styles/Theme'
+import Theme from "@/styles/Theme";
 
 // icons
 import {
   Feather,
   MaterialCommunityIcons,
   MaterialIcons,
-} from '@expo/vector-icons'
+} from "@expo/vector-icons";
 
 // Navigation
-import Service from '@/app/types/Service'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { NavigationProp } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import RedirectScreen from "@/app/screens/Redirect";
+import Service from "@/app/types/Service";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationProp } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export type Screens = ['Home', 'Services', 'Bookings', 'Book']
+export type Screens = ["Home", "Services", "Bookings", "Book", "Service"];
 export type RootStackParamList = {
-  Home: undefined
-  Services: undefined
-  Bookings: undefined
-  Book: { data: Service }
-}
-export type StackNavigation = NavigationProp<RootStackParamList>
+  Home: undefined;
+  Service: undefined;
+  Services: undefined;
+  Bookings: undefined;
+  Book: { data: Service };
+};
+export type StackNavigation = NavigationProp<RootStackParamList>;
 
 const { Navigator: TabNavigator, Screen: TabScreen } =
-  createBottomTabNavigator<RootStackParamList>()
+  createBottomTabNavigator<RootStackParamList>();
 const { Navigator: StackNavigator, Screen } =
-  createNativeStackNavigator<RootStackParamList>()
+  createNativeStackNavigator<RootStackParamList>();
 
-const themeColor = Theme.colors
+const themeColor = Theme.colors;
 
 function ScreenTabs() {
   return (
@@ -61,7 +62,7 @@ function ScreenTabs() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => {
-            return <Feather name="home" size={size} color={color} />
+            return <Feather name="home" size={size} color={color} />;
           },
         }}
       />
@@ -76,13 +77,13 @@ function ScreenTabs() {
                 name="file-document-outline"
                 color={color}
               />
-            )
+            );
           },
         }}
       />
       <TabScreen
         name="Services"
-        component={ServicesScreen}
+        component={RedirectScreen}
         options={{
           tabBarIcon: ({ color, size }) => {
             return (
@@ -91,9 +92,9 @@ function ScreenTabs() {
                 size={size}
                 color={color}
               />
-            )
+            );
           },
-          tabBarBadge: '',
+          tabBarBadge: "",
           tabBarBadgeStyle: {
             borderColor: `${Theme.colors.background}`,
             borderWidth: 2,
@@ -102,8 +103,23 @@ function ScreenTabs() {
           },
         }}
       />
+      <TabScreen
+        name="Service"
+        component={RedirectScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return (
+              <MaterialCommunityIcons
+                name="message-text-outline"
+                size={size}
+                color={color}
+              />
+            );
+          },
+        }}
+      />
     </TabNavigator>
-  )
+  );
 }
 
 export function Routes() {
@@ -124,5 +140,5 @@ export function Routes() {
         }}
       />
     </StackNavigator>
-  )
+  );
 }
