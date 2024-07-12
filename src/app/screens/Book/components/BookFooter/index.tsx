@@ -6,12 +6,14 @@ import styles from './styles'
 import { MaterialIcons } from '@expo/vector-icons'
 // navigation
 import Service from '@/app/types/Service'
+import { BookingType } from '@/enums/Booking'
 
 type Props = {
   data: Service
+  handleSubmit: (bookingType: BookingType) => void
 }
 
-export default function BookFooter({ data }: Props) {
+export default function BookFooter({ data, handleSubmit }: Props) {
   return (
     <View style={styles.container}>
       {/* bill info */}
@@ -29,10 +31,16 @@ export default function BookFooter({ data }: Props) {
       </View>
       {/* button group */}
       <View style={styles.buttonGroup}>
-        <TouchableOpacity style={styles.draftButton}>
+        <TouchableOpacity
+          onPress={() => handleSubmit(BookingType.draft)}
+          style={styles.draftButton}
+        >
           <Text style={styles.draftButtonText}>Save draft</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.submitButton}>
+        <TouchableOpacity
+          onPress={() => handleSubmit(BookingType.upcoming)}
+          style={styles.submitButton}
+        >
           <Text style={styles.submitButtonText}>Book now</Text>
         </TouchableOpacity>
       </View>

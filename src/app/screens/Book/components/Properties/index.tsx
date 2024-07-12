@@ -7,15 +7,16 @@ import styles from './styles'
 // icons
 import { Entypo, EvilIcons, Feather, Ionicons } from '@expo/vector-icons'
 // enums
-import Properties from '../../enums/Properties'
+
 // components
+import PropertyType from '@/enums/PropertyType'
 import { StackNavigation } from '@/routes'
 import { useNavigation } from '@react-navigation/native'
 import BookIconButton from '../BookIconButton'
 
 type PropertiesProps = {
-  property: Properties
-  onButtonPress: (value: React.SetStateAction<Properties>) => void
+  property: PropertyType
+  onButtonPress: (value: React.SetStateAction<PropertyType>) => void
 }
 
 export default function PropertiesComponent({
@@ -43,9 +44,9 @@ export default function PropertiesComponent({
         {/* home property */}
         <BookIconButton
           text="Home"
-          onPress={() => onButtonPress(Properties.home)}
+          onPress={() => onButtonPress(PropertyType.home)}
           iconContainerStyle={
-            property === Properties.home && {
+            property === PropertyType.home && {
               borderColor: Theme.colors.primary.background,
             }
           }
@@ -54,7 +55,7 @@ export default function PropertiesComponent({
             name="home"
             size={24}
             color={
-              property === Properties.home
+              property === PropertyType.home
                 ? Theme.colors.primary.background
                 : '#D1D3D4'
             }
@@ -64,9 +65,9 @@ export default function PropertiesComponent({
         {/* office property */}
         <BookIconButton
           text="Office"
-          onPress={() => onButtonPress(Properties.office)}
+          onPress={() => onButtonPress(PropertyType.office)}
           iconContainerStyle={
-            property === Properties.office && {
+            property === PropertyType.office && {
               borderColor: Theme.colors.primary.background,
             }
           }
@@ -75,7 +76,7 @@ export default function PropertiesComponent({
             name="business"
             size={24}
             color={
-              property === Properties.office
+              property === PropertyType.office
                 ? Theme.colors.primary.background
                 : '#D1D3D4'
             }
@@ -85,9 +86,9 @@ export default function PropertiesComponent({
         {/* vila property */}
         <BookIconButton
           text="Vila"
-          onPress={() => onButtonPress(Properties.vila)}
+          onPress={() => onButtonPress(PropertyType.vila)}
           iconContainerStyle={
-            property === Properties.vila && {
+            property === PropertyType.vila && {
               borderColor: Theme.colors.primary.background,
             }
           }
@@ -96,7 +97,7 @@ export default function PropertiesComponent({
             name="shop"
             size={24}
             color={
-              property === Properties.vila
+              property === PropertyType.vila
                 ? Theme.colors.primary.background
                 : '#D1D3D4'
             }

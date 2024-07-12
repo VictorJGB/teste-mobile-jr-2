@@ -1,7 +1,7 @@
 enum PropertyType {
-  'Home',
-  'Office',
-  'Vila',
+  'home',
+  'office',
+  'vila',
 }
 
 export default PropertyType

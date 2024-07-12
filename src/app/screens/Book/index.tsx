@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { ImageBackground, ScrollView, Text, View } from 'react-native'
 // icons
 import { AntDesign } from '@expo/vector-icons'
@@ -13,18 +13,60 @@ import DescriptionComponent from './components/Description'
 import PropertiesComponent from './components/Properties'
 import QuantitiesComponent from './components/Quantities'
 // navigation
-import { RootStackParamList } from '@/routes'
+import { RootStackParamList, StackNavigation } from '@/routes'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 // enums
-import Properties from './enums/Properties'
+import Book from '@/app/types/Book'
+import { useBookingContext } from '@/context/booking'
+import { BookingType, Status } from '@/enums/Booking'
+import PropertyType from '@/enums/PropertyType'
+import { useNavigation } from '@react-navigation/native'
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Book'>
 
 export default function BookScreen({ route }: Props) {
-  const [property, setProperty] = useState<Properties>(Properties.home)
+  const { navigate } = useNavigation<StackNavigation>()
+  const { books, setBooks } = useBookingContext()
+  const [registerBook, setRegisterBook] = useState<Book | null>(null)
+
+  const [property, setProperty] = useState<PropertyType>(PropertyType.home)
   const [units, setUnits] = useState<number>(0)
   const [bedrooms, setBedrooms] = useState<number>(0)
+  const [description, setDescription] = useState<string>('')
   const { params } = route
+
+  useEffect(() => {
+    setRegisterBook({
+      service: params.data,
+      referenceCode: '#D-571224',
+      schedule: '8:00-9:00 AM,  09 Dec',
+      status: Status.confirmed,
+      bedrooms,
+      units,
+      description,
+      propertyType: property,
+    })
+  }, [bedrooms, description, params.data, property, units])
+
+  const handleSubmit = useCallback(
+    (bookingType: BookingType) => {
+      if (registerBook) {
+        const newRegistry: Book | null = {
+          bookingType,
+          ...registerBook,
+        }
+        setRegisterBook(newRegistry)
+        if (books) {
+          const updatedBooks: Book[] = [...books, registerBook]
+          setBooks(updatedBooks)
+        } else {
+          setBooks([registerBook])
+        }
+        console.log(books)
+      }
+    },
+    [books, registerBook, setBooks],
+  )
 
   return (
     <View style={{ flex: 1, position: 'relative' }}>
@@ -73,11 +115,11 @@ export default function BookScreen({ route }: Props) {
             />
 
             {/* Description container */}
-            <DescriptionComponent />
+            <DescriptionComponent handleChange={setDescription} />
           </View>
         </View>
       </ScrollView>
-      <BookFooter data={params.data} />
+      <BookFooter handleSubmit={handleSubmit} data={params.data} />
     </View>
   )
 }

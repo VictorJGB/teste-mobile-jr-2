@@ -41,7 +41,7 @@ const themeColor = Theme.colors
 function ScreenTabs() {
   return (
     <TabNavigator
-      initialRouteName="Bookings"
+      initialRouteName="Home"
       sceneContainerStyle={{
         backgroundColor: Theme.colors.backgroundIce,
       }}

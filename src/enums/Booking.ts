@@ -1,10 +1,11 @@
 export enum Status {
-  'confirmed',
-  'pending',
+  confirmed = 'confirmed',
+  pending = 'pending',
 }
 
 export enum BookingType {
-  'upcoming',
-  'history',
-  'draft',
+  upcoming = 'upcoming',
+  history = 'history',
+  draft = 'draft',
+  none = 'undefined',
 }

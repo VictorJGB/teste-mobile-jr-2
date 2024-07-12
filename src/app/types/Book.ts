@@ -7,10 +7,10 @@ type Book = {
   referenceCode: string
   schedule: string
   status: Status
-  propertyType?: PropertyType
-  units?: number
-  bedrooms?: number
-  description?: string
+  propertyType: PropertyType
+  units: number
+  bedrooms: number
+  description: string
   bookingType?: BookingType
 }
 

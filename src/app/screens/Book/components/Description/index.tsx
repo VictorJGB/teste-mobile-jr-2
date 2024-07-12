@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { Text, TextInput, View } from 'react-native'
 
 // book screen styles
@@ -7,7 +7,11 @@ import { globalStyles } from '../../styles'
 // local styles
 import styles from './styles'
 
-export default function DescriptionComponent() {
+type Props = {
+  handleChange: Dispatch<SetStateAction<string>>
+}
+
+export default function DescriptionComponent({ handleChange }: Props) {
   return (
     <View style={[globalStyles.optionsContainer, { marginBottom: 124 }]}>
       {/* header */}
@@ -21,6 +25,7 @@ export default function DescriptionComponent() {
         style={styles.textarea}
         multiline
         numberOfLines={3}
+        onChangeText={(e) => handleChange(e)}
         placeholder="Write an description..."
       />
     </View>

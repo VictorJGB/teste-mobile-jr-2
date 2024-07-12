@@ -8,7 +8,6 @@ import {
 } from 'react'
 
 import Book from '@/app/types/Book'
-import { BooksData } from '@/data/books'
 
 type BookingContextProps = {
   books: Book[] | null
@@ -20,7 +19,7 @@ const BookingContext = createContext<BookingContextProps>(
 )
 
 function BookingProvider({ children }: { children: ReactNode }) {
-  const [books, setBooks] = useState<Book[] | null>(BooksData)
+  const [books, setBooks] = useState<Book[] | null>(null)
   return (
     <BookingContext.Provider value={{ books, setBooks }}>
       {children}

@@ -27,7 +27,7 @@ export default function NoContentComponent() {
         style={styles.allServicesButton}
         onPress={() => navigate('Home')}
       >
-        View all services
+        <Text style={styles.buttonText}>View all services</Text>
       </TouchableOpacity>
     </View>
   )
