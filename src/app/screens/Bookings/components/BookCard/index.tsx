@@ -25,7 +25,7 @@ export default function BookCard({ data }: Props) {
           <Image
             alt="category icon"
             style={{ width: 30, height: 20 }}
-            source={require('@/assets/svg/ac-category.svg')}
+            source={data.service.category}
           />
         </View>
 

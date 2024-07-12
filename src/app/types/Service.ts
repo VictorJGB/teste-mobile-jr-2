@@ -4,6 +4,7 @@ type Service = {
     score: number
     quantity: number
   }
+  category: string
   title: string
   startsFrom: string
   price: number

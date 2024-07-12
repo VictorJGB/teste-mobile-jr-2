@@ -50,13 +50,14 @@ export default function BookScreen({ route }: Props) {
 
   const handleSubmit = useCallback(
     (bookingType: BookingType) => {
+      let updatedBooks: Book[]
       if (registerBook) {
         const newRegistry: Book | null = {
           bookingType,
           ...registerBook,
         }
         if (books) {
-          const updatedBooks: Book[] = [...books, newRegistry]
+          updatedBooks = [...books, newRegistry]
           setBooks(updatedBooks)
         } else {
           setBooks([registerBook])

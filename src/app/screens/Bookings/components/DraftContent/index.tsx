@@ -9,7 +9,7 @@ type Props = {
 }
 
 export default function DraftComponent({ data }: Props) {
-  if (!data) {
+  if (!data || data.length === 0) {
     return (
       <View style={styles.container}>
         <View style={styles.noContentText}>

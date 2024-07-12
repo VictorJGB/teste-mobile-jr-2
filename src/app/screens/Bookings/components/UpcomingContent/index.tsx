@@ -15,7 +15,7 @@ type Props = {
 }
 
 export default function UpcomingContent({ data }: Props) {
-  if (!data) return <NoUpcomingContent />
+  if (!data || data.length === 0) return <NoUpcomingContent />
 
   return (
     <View style={styles.container}>
