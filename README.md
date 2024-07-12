@@ -1,7 +1,7 @@
 ## Teste Mobile JR 2 `unfinished`
 A React Native project using Expo for the mobile job vacancy test on Guató Digital.
 
-## Techonolgies
+## Techonologies
 This was the required technologies for the test
 - React Navigation ( [Read more](https://reactnavigation.org/) )
 - React Native Stylesheet ( [Read more](https://reactnative.dev/docs/stylesheet) )
