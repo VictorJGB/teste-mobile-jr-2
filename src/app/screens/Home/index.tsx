@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 // icons
-import { Feather } from '@expo/vector-icons'
+import { Feather } from "@expo/vector-icons";
 // components
-import PrimaryButton from '@/components/AppButton/PrimaryButton'
-import { ScrollView, TextInput, View } from 'react-native'
-import ServiceListComponent from './components/ServiceList'
+import PrimaryButton from "@/components/AppButton/PrimaryButton";
+import { ScrollView, TextInput, View } from "react-native";
+import ServiceListComponent from "./components/ServiceList";
 // data
-import { ServicesData } from '@/data/services'
+import { ServicesData } from "@/data/services";
 // styles
-import Theme from '@/styles/Theme'
-import { styles } from './styles'
+import Theme from "@/styles/Theme";
+import { styles } from "./styles";
 
 export default function HomeScreen() {
   return (
@@ -17,6 +17,7 @@ export default function HomeScreen() {
       {/* top navigation */}
       <View style={styles.topNavigation}>
         <View style={styles.inputContainer}>
+          {/* TO-DO: add an filter logic */}
           <TextInput
             style={styles.navigationInput}
             placeholder="Search container"
@@ -36,9 +37,9 @@ export default function HomeScreen() {
       </View>
       <ScrollView contentContainerStyle={styles.scrollView}>
         {ServicesData.map((serviceList, index) => {
-          return <ServiceListComponent key={index} data={serviceList} />
+          return <ServiceListComponent key={index} data={serviceList} />;
         })}
       </ScrollView>
     </View>
-  )
+  );
 }

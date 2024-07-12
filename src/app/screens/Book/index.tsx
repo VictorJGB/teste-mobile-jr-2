@@ -1,75 +1,76 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { ImageBackground, ScrollView, Text, View } from 'react-native'
+import React, { useCallback, useEffect, useState } from "react";
+import { ImageBackground, ScrollView, Text, View } from "react-native";
 // icons
-import { AntDesign } from '@expo/vector-icons'
+import { AntDesign } from "@expo/vector-icons";
 // styles
-import Theme from '@/styles/Theme'
-import { styles } from './styles'
+import Theme from "@/styles/Theme";
+import { styles } from "./styles";
 // gradient
-import { LinearGradient } from 'expo-linear-gradient'
+import { LinearGradient } from "expo-linear-gradient";
 // components
-import BookFooter from './components/BookFooter'
-import DescriptionComponent from './components/Description'
-import PropertiesComponent from './components/Properties'
-import QuantitiesComponent from './components/Quantities'
+import BookFooter from "./components/BookFooter";
+import DescriptionComponent from "./components/Description";
+import PropertiesComponent from "./components/Properties";
+import QuantitiesComponent from "./components/Quantities";
 // navigation
-import { RootStackParamList, StackNavigation } from '@/routes'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { RootStackParamList, StackNavigation } from "@/routes";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 // enums
-import Book from '@/app/types/Book'
-import { useBookingContext } from '@/context/booking'
-import { BookingType, Status } from '@/enums/Booking'
-import PropertyType from '@/enums/PropertyType'
-import { useNavigation } from '@react-navigation/native'
+import Book from "@/app/types/Book";
+import { useBookingContext } from "@/context/booking";
+import { BookingType, Status } from "@/enums/Booking";
+import PropertyType from "@/enums/PropertyType";
+import { useNavigation } from "@react-navigation/native";
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Book'>
+type Props = NativeStackScreenProps<RootStackParamList, "Book">;
 
 export default function BookScreen({ route }: Props) {
-  const { navigate } = useNavigation<StackNavigation>()
-  const { books, setBooks } = useBookingContext()
-  const [registerBook, setRegisterBook] = useState<Book | null>(null)
+  const { navigate } = useNavigation<StackNavigation>();
+  const { books, setBooks } = useBookingContext();
+  const [registerBook, setRegisterBook] = useState<Book | null>(null);
 
-  const [property, setProperty] = useState<PropertyType>(PropertyType.home)
-  const [units, setUnits] = useState<number>(0)
-  const [bedrooms, setBedrooms] = useState<number>(0)
-  const [description, setDescription] = useState<string>('')
-  const { params } = route
+  const [property, setProperty] = useState<PropertyType>(PropertyType.home);
+  const [units, setUnits] = useState<number>(0);
+  const [bedrooms, setBedrooms] = useState<number>(0);
+  const [description, setDescription] = useState<string>("");
+  const { params } = route;
 
   useEffect(() => {
     setRegisterBook({
       service: params.data,
-      referenceCode: '#D-571224',
-      schedule: '8:00-9:00 AM,  09 Dec',
+      referenceCode: "#D-571224",
+      schedule: "8:00-9:00 AM,  09 Dec",
       status: Status.confirmed,
       bedrooms,
       units,
       description,
       propertyType: property,
-    })
-  }, [bedrooms, description, params.data, property, units])
+    });
+  }, [bedrooms, description, params.data, property, units]);
 
+  // TO-DO: Improve synchronous setState
   const handleSubmit = useCallback(
     (bookingType: BookingType) => {
-      let updatedBooks: Book[]
+      let updatedBooks: Book[];
       if (registerBook) {
         const newRegistry: Book | null = {
           bookingType,
           ...registerBook,
-        }
+        };
         if (books) {
-          updatedBooks = [...books, newRegistry]
-          setBooks(updatedBooks)
+          updatedBooks = [...books, newRegistry];
+          setBooks(updatedBooks);
         } else {
-          setBooks([registerBook])
+          setBooks([registerBook]);
         }
-        console.log(books)
+        console.log(books);
       }
     },
-    [books, registerBook, setBooks],
-  )
+    [books, registerBook, setBooks]
+  );
 
   return (
-    <View style={{ flex: 1, position: 'relative' }}>
+    <View style={{ flex: 1, position: "relative" }}>
       <ScrollView contentContainerStyle={styles.container}>
         {/* image container */}
         <ImageBackground
@@ -82,7 +83,7 @@ export default function BookScreen({ route }: Props) {
           {/* gradient */}
           <LinearGradient
             style={styles.gradient}
-            colors={['rgba(63, 63, 63, 0)', 'rgba(0, 0, 0, 0.7)']}
+            colors={["rgba(63, 63, 63, 0)", "rgba(0, 0, 0, 0.7)"]}
             locations={[0.5, 1]}
           >
             {/* badge */}
@@ -121,5 +122,5 @@ export default function BookScreen({ route }: Props) {
       </ScrollView>
       <BookFooter handleSubmit={handleSubmit} data={params.data} />
     </View>
-  )
+  );
 }
