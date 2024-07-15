@@ -18,7 +18,7 @@ To power up this project i use the following dependencies:
 - Rocketseat ESLint Config: Eslint configs based on the rocketseat pattern. ( [Read more](https://github.com/Rocketseat/eslint-config-rocketseat) )
 - TypeScript: Type checking. ( [Read more](https://www.typescriptlang.org/) )
   
-Getting Started
+## Getting Started
 - clone the repository </br> `git clone https://github.com/VictorJGB/teste-mobile-jr-2` </br> </br>
 - install the dependencies </br> `npm install` </br> </br>
 - run the project </br> `npm run start` </br> </br>
